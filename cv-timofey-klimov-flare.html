@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timofey Klimov -- CV</title>
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/space-grotesk-latin.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/space-grotesk-latin-ext.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/dm-sans-latin.woff2') format('woff2');
+    font-weight: 100 1000;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/dm-sans-latin-ext.woff2') format('woff2');
+    font-weight: 100 1000;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #1a1a2e;
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 2px 0;
+  }
+
+  .header { margin-bottom: 20px; }
+
+  .header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .header-gradient {
+    height: 2px;
+    background: linear-gradient(to right, hsl(187, 74%, 32%), hsl(270, 70%, 45%));
+    border-radius: 1px;
+    margin-bottom: 10px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: #555;
+  }
+
+  .contact-row a { color: #555; text-decoration: none; }
+  .contact-row .separator { color: #ccc; }
+
+  .section { margin-bottom: 18px; }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: hsl(187, 74%, 32%);
+    border-bottom: 1.5px solid #e2e2e2;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .summary-text { font-size: 11px; line-height: 1.7; color: #2f2f2f; }
+
+  a { white-space: nowrap; }
+
+  .competencies-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .competency-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: hsl(187, 74%, 28%);
+    background: hsl(187, 40%, 95%);
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid hsl(187, 40%, 88%);
+  }
+
+  .job { margin-bottom: 14px; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .job-company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: hsl(270, 70%, 45%);
+  }
+
+  .job-period { font-size: 10.5px; color: #777; white-space: nowrap; }
+  .job-role { font-size: 11px; font-weight: 600; color: #333; margin-bottom: 6px; }
+  .job-location { font-size: 10px; color: #888; }
+
+  .job ul { padding-left: 18px; margin-top: 6px; }
+
+  .job li { font-size: 10.5px; line-height: 1.6; color: #333; margin-bottom: 4px; }
+  .job li strong { font-weight: 600; }
+
+  .project { margin-bottom: 12px; }
+
+  .project-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: hsl(270, 70%, 45%);
+  }
+
+  .project-badge {
+    font-size: 9px;
+    font-weight: 500;
+    color: hsl(187, 74%, 32%);
+    background: hsl(187, 40%, 95%);
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+  }
+
+  .project-desc { font-size: 10.5px; color: #444; margin-top: 3px; line-height: 1.55; }
+  .project-tech { font-size: 9.5px; color: #888; margin-top: 3px; }
+
+  .edu-item { margin-bottom: 8px; }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .edu-title { font-weight: 600; font-size: 11px; color: #333; }
+  .edu-org { color: hsl(270, 70%, 45%); font-weight: 500; }
+  .edu-year { font-size: 10px; color: #777; white-space: nowrap; }
+  .edu-desc { font-size: 10px; color: #666; margin-top: 2px; line-height: 1.5; }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .cert-title { font-size: 10.5px; font-weight: 500; color: #333; }
+  .cert-org { color: hsl(270, 70%, 45%); }
+  .cert-year { font-size: 10px; color: #777; white-space: nowrap; }
+
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .skill-item { font-size: 10.5px; color: #444; }
+  .skill-category { font-weight: 600; color: #333; font-size: 10.5px; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { padding: 0; }
+  }
+
+  .avoid-break, .job, .project, .edu-item, .cert-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header avoid-break">
+    <h1>Timofey Klimov</h1>
+    <div class="header-gradient"></div>
+    <div class="contact-row">
+      <span>klimov.tim@gmail.com</span>
+      <span class="separator">|</span>
+      <a href="https://www.linkedin.com/in/timofey-klimov/">linkedin.com/in/timofey-klimov</a>
+      <span class="separator">|</span>
+      <span>Sydney, NSW, Australia</span>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section avoid-break">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary-text">
+      2x Certified Salesforce Administrator (ADM-201 + Platform App Builder) with hands-on programmatic experience including Batch Apex development and Experience Cloud configuration. Part of a 5-person Salesforce team (2 admins, 2 developers, 1 functional consultant) supporting a 500+ user Sales Cloud org at Peninsula, with personal ownership of Flow automation, permission architecture, CI/CD deployments via Gearset, and a full org migration with Marketo integration. Built a partner-facing Experience Cloud site and modified a Batch Apex lead lifecycle job during org cutover -- ready to bring that collaborative, cross-functional depth to a product company where the platform grows with the business.
+    </div>
+  </div>
+
+  <!-- CORE COMPETENCIES -->
+  <div class="section">
+    <div class="section-title">Core Competencies</div>
+    <div class="competencies-grid">
+      <span class="competency-tag">Salesforce Administration</span>
+      <span class="competency-tag">Flow Builder &amp; Automation</span>
+      <span class="competency-tag">Batch Apex Development</span>
+      <span class="competency-tag">Experience Cloud</span>
+      <span class="competency-tag">User Access Management</span>
+      <span class="competency-tag">Data Quality &amp; Governance</span>
+      <span class="competency-tag">CI/CD with Gearset &amp; Git</span>
+      <span class="competency-tag">System Integrations</span>
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Peninsula</span>
+        <span class="job-period">March 2025 - Present</span>
+      </div>
+      <div class="job-role">Salesforce Administrator <span class="job-location">| Sydney, NSW</span></div>
+      <ul>
+        <li><strong>Experience Cloud (Partner Portal):</strong> Built a Salesforce Experience Cloud site enabling partner organisations to create and submit leads outside business hours, removing manual handoffs and extending pipeline coverage without adding headcount.</li>
+        <li><strong>Batch Apex - Lead Lifecycle:</strong> Modified a Batch Apex job to handle lead lifecycle state transitions for the new org during migration, ensuring automated processing continued without interruption across the cutover window.</li>
+        <li><strong>Org Migration &amp; Integration:</strong> Contributed to a full-scale org migration as the Marketing and Sales Cloud SME. Cleansed and merged 10,000+ legacy records using Plauti Deduplicate. Defined field mapping and sync logic for the Marketo-to-Salesforce integration to maintain zero downtime for revenue-critical processes.</li>
+        <li><strong>User Management (500+ Users):</strong> Manage user provisioning for a large Sales Cloud org including complex role hierarchy adjustments, Permission Set Groups, and sharing rules to enforce security best practices and audit readiness.</li>
+        <li><strong>Flow Builder &amp; Configuration:</strong> Design and build multi-object declarative automations (Flows) including subflow architecture, error handling, and validation rules. Manage NC2 Distribution Engine for complex lead assignment logic aligned to business needs.</li>
+        <li><strong>CI/CD Deployments:</strong> Use Gearset and Bitbucket (Git) to manage structured release pipelines from sandbox to production, maintaining a clean deployment record and reducing change-related incidents.</li>
+        <li><strong>Troubleshooting &amp; Support:</strong> Primary Salesforce point of contact for Sales and Marketing teams, resolving access issues, integration failures, and configuration incidents while supporting all other business units as needed.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Peninsula</span>
+        <span class="job-period">May 2023 - March 2025</span>
+      </div>
+      <div class="job-role">Campaign Manager <span class="job-location">| Sydney, NSW</span></div>
+      <ul>
+        <li><strong>CRM Reporting:</strong> Built Salesforce reports and dashboards to visualize campaign performance, enabling stakeholders to make data-driven decisions and optimize ROI in real time.</li>
+        <li><strong>Process Optimization:</strong> Identified bottlenecks in lead management workflows and implemented CRM process improvements that cut campaign setup time by 30%.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">S2W Media</span>
+        <span class="job-period">July 2022 - April 2023</span>
+      </div>
+      <div class="job-role">Head of Operations <span class="job-location">| Sydney, NSW</span></div>
+      <ul>
+        <li>Managed Salesforce CRM operations and data management for B2B lead generation; optimised data flows to increase lead conversion by 20%.</li>
+        <li>Built Salesforce process automations and reports for call centre operations, improving team efficiency by 25%.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">TechnologyAdvice</span>
+        <span class="job-period">January 2022 - July 2022</span>
+      </div>
+      <div class="job-role">Teledemand Manager <span class="job-location">| Sydney, NSW</span></div>
+      <ul>
+        <li>Delivered Salesforce CRM enhancements for lead generation; improved data integrity and campaign efficiency by 25%.</li>
+        <li>Managed Salesforce reports and dashboards for Southeast Asia operations, driving data-driven performance management.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">CBS Interactive / Red Ventures / TechnologyAdvice</span>
+        <span class="job-period">July 2018 - January 2022</span>
+      </div>
+      <div class="job-role">Senior Team Manager <span class="job-location">| Singapore</span></div>
+      <ul>
+        <li>Established a new call centre operation in Southeast Asia, achieving full operational self-sufficiency and 30% regional business growth.</li>
+        <li>Led Salesforce adoption across the team; trained staff on best practices and built custom reports to track performance metrics.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section avoid-break">
+    <div class="section-title">Projects</div>
+
+    <div class="project">
+      <span class="project-title">Partner Lead Submission Portal</span>
+      <span class="project-badge">Experience Cloud</span>
+      <div class="project-desc">Built a Salesforce Experience Cloud site giving partner organisations direct access to create and submit leads outside business hours. Configured site security, object access, sharing rules, and custom fields to ensure clean data entry and correct lead routing on submission.</div>
+      <div class="project-tech">Salesforce Experience Cloud, Flow Builder, Sharing Rules, Custom Objects</div>
+    </div>
+
+    <div class="project">
+      <span class="project-title">Esign Flow Architecture</span>
+      <span class="project-badge">Flow Builder</span>
+      <div class="project-desc">Replaced a failing managed package Flow with a custom-built 3-party sequential signing process using Esign on CPQ Quotes. Implemented subflow architecture, error handling, and automated document distribution to all signing parties -- eliminating manual handoffs entirely.</div>
+      <div class="project-tech">Salesforce Flow Builder, CPQ, Subflows, Error Handling</div>
+    </div>
+
+    <div class="project">
+      <span class="project-title">SUMO Meeting Notification Flows</span>
+      <span class="project-badge">Flow Builder</span>
+      <div class="project-desc">Built automated email notification Flows triggered by meeting type and department using SUMO scheduling. Replaced manual communication steps with event-driven notifications, ensuring the right stakeholders were alerted based on meeting context without any manual intervention.</div>
+      <div class="project-tech">Salesforce Flow Builder, SUMO Scheduling, Record-Triggered Flows</div>
+    </div>
+
+    <div class="project">
+      <span class="project-title">Org Migration Data Pipeline</span>
+      <span class="project-badge">Data Management</span>
+      <div class="project-desc">Contributed to a full org cutover as the Marketing and Sales Cloud SME: cleansed and merged 10,000+ legacy records using Plauti Deduplicate, defined field mapping and sync logic for the Marketo-to-Salesforce integration, and modified a Batch Apex job to maintain lead lifecycle processing through the cutover window.</div>
+      <div class="project-tech">Plauti Deduplicate, Data Loader, Marketo, Batch Apex, Gearset</div>
+    </div>
+
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section avoid-break">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">Bachelor of Accounting &nbsp;<span class="edu-org">Universal Business School Sydney</span></span>
+        <span class="edu-year">Sydney, Australia</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">Masters of Linguistics and Interpreting &nbsp;<span class="edu-org">Siberian Independent Institute</span></span>
+        <span class="edu-year">Russia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section avoid-break">
+    <div class="section-title">Certifications</div>
+    <div class="cert-item">
+      <span class="cert-title"><span class="cert-org">Salesforce</span> Certified Administrator (ADM-201)</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-title"><span class="cert-org">Salesforce</span> Certified Platform App Builder</span>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section avoid-break">
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+      <span class="skill-item"><span class="skill-category">Salesforce:</span> Flow Builder, Batch Apex, Experience Cloud, Object Manager, Lightning App Builder, SOQL, Security Model (Profiles, Roles, Permission Sets), Validation Rules</span>
+      <span class="skill-item"><span class="skill-category">DevOps &amp; Release:</span> Gearset, Bitbucket (Git), VS Code, CI/CD</span>
+      <span class="skill-item"><span class="skill-category">Integrations:</span> Marketo, NC2 Distribution Engine, ZoomInfo, RingLead</span>
+      <span class="skill-item"><span class="skill-category">Data Management:</span> Plauti Deduplicate, Data Loader, Data Hygiene</span>
+      <span class="skill-item"><span class="skill-category">Languages:</span> English (Fluent), Russian (Native)</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
