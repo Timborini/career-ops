@@ -6,12 +6,13 @@ Email: klimov.tim@gmail.com | Phone: 0402959079
 
 ## Professional Summary
 
-2x Certified Salesforce Administrator (Administrator & Platform App Builder) with a unique background in Revenue Operations and Marketing Strategy. Currently supporting a 500+ user org, managing complex user hierarchies and delivering system enhancements. Proven track record in Org Migrations, specifically leading Marketing Automation (Marketo) integration and Sales Cloud optimization. Leverages 12+ years of operational experience to translate business requirements into scalable technical solutions.
+3x Certified Salesforce Administrator (Administrator, Advanced Administrator & Platform App Builder) with a unique background in Revenue Operations and Marketing Strategy. Currently supporting a 500+ user org, managing complex user hierarchies and delivering system enhancements. Proven track record in Org Migrations, specifically leading Marketing Automation (Marketo) integration and Sales Cloud optimization. Leverages 12+ years of operational experience to translate business requirements into scalable technical solutions.
 
 ## Certifications
 
 - Salesforce Certified Platform App Builder
 - Salesforce Certified Administrator (ADM-201)
+- Salesforce Certified Advanced Administrator (August 2026)
 
 ## Technical Skills
 
@@ -31,6 +32,7 @@ Email: klimov.tim@gmail.com | Phone: 0402959079
 - **Partner Portal (Experience Cloud):** Built a Salesforce Experience Cloud site enabling partner organisations to create and submit leads outside business hours, removing manual handoffs and extending pipeline coverage.
 - **Batch Apex — Lead Lifecycle:** Modified a Batch Apex job to handle lead lifecycle state transitions for the new org during migration, ensuring automated processing continued without interruption across the cutover.
 - **Troubleshooting & Support:** Primary Salesforce point of contact for Sales and Marketing teams, resolving access issues, integration failures, and configuration incidents while supporting all other business units as needed.
+- **Release & Platform Operations:** Perform sandbox refreshes and support UAT. Write release notes, user guides and knowledge articles.
 - **Stakeholder Engagement:** Collaborate with Sales and Marketing leadership to gather requirements and document technical specifications for new system builds.
 
 ### Campaign Manager
